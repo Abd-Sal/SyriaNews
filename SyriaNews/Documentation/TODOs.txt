@@ -1,0 +1,7 @@
+﻿- check UserService if we need it, else remove it
+- when remove image from article, remove it from article content
+- implement and check treat wih images
+- refactoring code to be cleaner
+- recode caching
+- check queries performance
+- apply notifications

@@ -1,0 +1,52 @@
+﻿Member need to :
+    1-)see the saved articles                                                       DONE
+    2-)see the likes on articles                                                    DONE
+    3-)see the following Newspapers                                                 DONE
+    4-)see new articles by PostDate                                                 DONE
+    5-)see new articles by categories                                               DONE
+    6-)see for articles by tags                                                     DONE
+    7-)see for articles by titles                                                   DONE
+    8-)search for Newspaper by Name                                                 DONE
+    9-)see the articles content and comments and likes and views                    DONE
+    10-)comment on articles                                                         DONE
+    11-)following the newspapers                                                    DONE
+    12-)like the articles                                                           DONE
+    13-)save the articles                                                           DONE
+    14-)update comment                                                              DONE
+    15-)change profile image                                                         X
+    16-)see newspaper profile and articles                                          DONE
+    17-)see his profile and update it                                               DONE
+    18-)see new articles by most views                                              DONE
+
+================================================================================
+
+Newspaper need to : 
+    1-)see his articles                                                             DONE
+    2-)Update his articles                                                          DONE
+    3-)post articles                                                                DONE
+    4-)unpublish his articles                                                       DONE
+    5-)change profile image                                                          X
+    6-)see the views for articles                                                   DONE
+    7-)see the likes and (member who likes) for articles                            DONE
+    8-)see his followers                                                            DONE
+    9-)see the likes for categories                                                 DONE
+    10-)see the views for categories                                                DONE
+    11-)see the categories for his articles                                         DONE
+    12-)see the tags that he use it                                                 DONE
+    13-)see count of likes                                                          DONE
+    14-)see count of articles                                                       DONE
+    15-)see count of followers                                                      DONE
+    16-)see tags for article                                                        DONE
+
+================================================================================
+
+Admin need to :
+    1-)deactivate and activate newspapers                                           DONE
+    2-)publish and unpublish articles                                               DONE
+    3-)activate the newspaper accounts                                              DONE
+    4-)see articles                                                                 DONE
+    5-)see newspapers profiles and thier articles(tags comments likes views)        DONE
+    6-)see member profile and his comments and likes and saved and followings       DONE
+    7-)activate and deactivate member account                                       DONE
+
+================================================================================

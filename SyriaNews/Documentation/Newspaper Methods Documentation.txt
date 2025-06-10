@@ -1,0 +1,75 @@
+﻿N1 : this method will get list of articles brief async ordered DESC by PostDate
+     and the response is "ArticleBreifResponse" : 
+        (Id, Title, Description, NewspaperID, CategoryID, IsPost, PostDate, Likes, Views)
+
+
+N2 : this method get the full article response "ArticleFullResponse" :
+        (Id, Title, Description, Content, NewspaperID, CategoryID, IsPost, PostDate, Likes, Views)
+
+
+N3 : this method to post article and the response if the "ArticleBreifResponse" :
+        (Id, Title, Description, NewspaperID, CategoryID, IsPost, PostDate, Likes, Views)
+
+
+N4 : this method to update the article (title, description, content, category) 
+    and the response is "Result"
+
+
+N5 : this method to publish and unpublish the article and the response 
+    is new status of publishing
+
+
+N6 : this method to calculate the views of articles for newpaper and the response
+    is count of views
+
+
+N7 : this method to get all members who like the article and the response is
+    list of "MemberForOthersResponse" :
+        (Id, FirstName, LastName, Gender)
+
+
+N8 : this method to get all members who following newspaper and the response is
+    list of "MemberForOthersResponse" :
+        (Id, FirstName, LastName, Gender)
+
+
+N9 : this method to calculate the likes for category and the response is 
+        count of likes
+
+
+N10 : this method to calculate the views for category and the response is 
+        count of views
+
+
+N11 : this method to get used category and count of use for each one
+        and the response is list of "CategoryWithCountOfUse" :
+            (CategoryName, CountOfUse)
+
+
+N12 : this method to get the count of likes for newspaper and the response
+        is count of likes
+
+
+N13 :  this method to get the count of views for newspaper and the response
+        is count of views
+
+
+N14 :  this method to get the count of followers for newspaper and the response
+        is count of followers
+
+
+N15 : this method to get the count of articles for newspaper and the response
+        is count of articles
+
+
+N16 : this method get used tags in newspaper and the response is 
+        list of "TagResponse" : 
+            (Id, TagName)
+
+
+N17 : this method get used tags in article and the response is 
+        list of "TagResponse" : 
+            (Id, TagName) 
+
+
+

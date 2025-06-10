@@ -1,0 +1,38 @@
+@SyriaNews_HostAddress = https://localhost:5000
+
+
+
+###
+
+POST {{SyriaNews_HostAddress}}/register
+Content-Type: application/json
+
+{
+  "Email": "admin@test.com",
+  "Password": "P@ssword123"
+}
+
+###
+
+POST {{SyriaNews_HostAddress}}/auth
+Content-Type: application/json
+
+{
+  "Email": "Admin@test.com",
+  "Password": "P@ssword123"
+}
+
+###
+
+POST {{SyriaNews_HostAddress}}/auth
+Content-Type: application/json
+
+{
+  //LoginRequest
+}
+
+###
+
+GET {{SyriaNews_HostAddress}}/api/categories
+
+###

@@ -1,0 +1,4021 @@
+{
+	"info": {
+		"_postman_id": "fe4aa08f-3638-42db-b155-ebbc79d0a175",
+		"name": "AspNetProjects",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37922070"
+	},
+	"item": [
+		{
+			"name": "SyriaNews",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Email\": \"test02.member@teml.net\", //abd.member@teml.net\r\n  \"Password\": \"P@ssword123\" //Abd@SyriaNews@Member@2025\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/{{ath}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{ath}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Refresh",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Token\" : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMmM0NWYzZC05YzI2LTQzZmItYjY5Yy0xY2Q0MzVmYmFiZGEiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6Im5ld3MudGVzdEBnbWFpbC5jb20iLCJqdGkiOiIwMTk2MDlmNi02N2U2LTc5NzgtODUxZS0zY2QwNzUyNzE4MWEiLCJleHAiOjE3NDM5MjU2NjUsImlzcyI6IlN5cmlhTmV3cyBBcHAiLCJhdWQiOiJTeXJpYU5ld3MgVXNlcnMifQ.qAKPvSVb5gOZ3857I7RsQay8Hau0JDtelBvCD9rLCkU\",\r\n    \"RefreshToken\" : \"LwE94tFFeWKkJuyGMMcbk7gMgYdpQ66rby8/QUmvU+kh/OE/HyT7vExnssJf1FS+M+wLyOPM9J8Ck7LGnWhHBw==\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/{{ath}}/refresh",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{ath}}",
+										"refresh"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Revoke Refresh Token",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Token\" : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NTkyZmYyYi0yYjhjLTQ0OTQtYjEyOC1kNWRlN2FmZWQ5ZjciLCJ0eXAiOiJBZG1pbiIsImVtYWlsIjoiYWRtaW5AdGVzdC5jb20iLCJqdGkiOiIwMTk1ZjEzNS1jY2YzLTcxNmYtOTIyNy04OWRkMDJiMjY4YWMiLCJleHAiOjE3NDM1MTAzODksImlzcyI6IlN5cmlhTmV3cyBBcHAiLCJhdWQiOiJTeXJpYU5ld3MgVXNlcnMifQ.7O3IiA4LYB-8k83CAF_Ybv6zAXtIi9iHJXiEQwXoC8A\",\r\n    \"RefreshToken\" : \"1qOGhGkZDL5/Y3XxQplTyF3BQwH6gxRu9dMsq0aMrgZdAD48MVXLX9Cyjln5imRpak1q5I/erOUcuj0/tCzxzg==\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/{{ath}}/revoke-refresh-token",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{ath}}",
+										"revoke-refresh-token"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Register Member",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Email\" : \"test10.member@teml.net\",\r\n    \"Password\" : \"P@ssword123\",\r\n    \"FirstName\" : \"Adnan\",\r\n    \"LastName\" : \"Dom\",\r\n    \"Gender\" : false\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/{{ath}}/register-member",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{ath}}",
+										"register-member"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Register Newspaper",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Email\" : \"test03.newspaper@teml.net\",\r\n    \"Password\" : \"P@ssword123\",\r\n    \"Name\" : \"Technocity Journal\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/{{ath}}/register-newspaper",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{ath}}",
+										"register-newspaper"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Resend Confirmation Email",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Email\" : \"test2@test.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/{{ath}}/resend-confirm-email",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{ath}}",
+										"resend-confirm-email"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Confirm Email",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/{{ath}}/confirm-email?UserID=94ab2877-935d-4d11-8268-ec64cf3f62e3&Code=Q2ZESjhFaDlmYTZjRytsQ3NENHJlVzl0NUVZaVl3aHZDOVpiUUE1aE12ZEtucmo2alZ2NEFiZVREeThTQUp0Q0xqeVdZTTNheHVvR3RCQnNlUHVTQlFVcE1wQyttNkkrcWZDZkU3UEQvUkJUYlM0Nmw4cnVJWXo3MGJDK3JId005NitiRHk4NEFrOEN5NWw5OE53S1FLSWRIN1dGYTJVVnhNaUs4bnNqOGg1dEN0K2tpVzlvdklXT2VuUHhsTCtCbE1jcVlZWXpJamZaSUZtMzFwRHkzQ0VSR08veGt6ZHh0RzhFTkoxejFxSklvaGJVT1UrVjVPeGROa0xyVkNxU05xZitNdz09",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{ath}}",
+										"confirm-email"
+									],
+									"query": [
+										{
+											"key": "UserID",
+											"value": "94ab2877-935d-4d11-8268-ec64cf3f62e3"
+										},
+										{
+											"key": "Code",
+											"value": "Q2ZESjhFaDlmYTZjRytsQ3NENHJlVzl0NUVZaVl3aHZDOVpiUUE1aE12ZEtucmo2alZ2NEFiZVREeThTQUp0Q0xqeVdZTTNheHVvR3RCQnNlUHVTQlFVcE1wQyttNkkrcWZDZkU3UEQvUkJUYlM0Nmw4cnVJWXo3MGJDK3JId005NitiRHk4NEFrOEN5NWw5OE53S1FLSWRIN1dGYTJVVnhNaUs4bnNqOGg1dEN0K2tpVzlvdklXT2VuUHhsTCtCbE1jcVlZWXpJamZaSUZtMzFwRHkzQ0VSR08veGt6ZHh0RzhFTkoxejFxSklvaGJVT1UrVjVPeGROa0xyVkNxU05xZitNdz09"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Forget Password",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Email\" : \"test100@test.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/{{ath}}/forget-password",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{ath}}",
+										"forget-password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reset Password",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Email\" : \"test1@test.com\",\r\n    \"Code\" : \"Q2ZESjhFaDlmYTZjRytsQ3NENHJlVzl0NUVad0JxNjJVcVJvZ1BpTTNpQzlydGtQazNLMTJvZm9wV2tRdU5oZytlbUlOQUNIWjlNMGNQZXBsVXNhSnN5S3hSRGwxOWxzUnB3R1BFRjBLN0xsVGNhallweDNkMyszUWkvd3JiNzJLSjJPeTl5UFVTZ20xZlZhS3lnS0ZyNW8vRjZ0MVRKcGo2bUI4Rnk0MlpsMDNmR1Jzbkh0Tkl5M0JLV0ZvUVFHY1FTWTJJZ1lwNWZpajhVMk9JOEw3ODV1RjNUMEE5YkxCTmVlWVlyNkFuZG44RGtl\",\r\n    \"NewPassword\" : \"P@ssword1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/{{ath}}/reset-password",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{ath}}",
+										"reset-password"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "UserService",
+					"item": [
+						{
+							"name": "me info",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyNWQyY2Q5OS04NTg4LTRjNzAtOTcyNC0xNmQyY2M5OWM5NmEiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QxMEB0ZXN0LmNvbSIsImp0aSI6IjAxOTYwYjA4LTU4YTAtN2UyNy1hMDVlLTNiMjFhYmQ3N2QxYyIsImV4cCI6MTc0Mzk0MzYxOCwiaXNzIjoiU3lyaWFOZXdzIEFwcCIsImF1ZCI6IlN5cmlhTmV3cyBVc2VycyJ9.xHthPLAT421n9b94x07J8G5gkfh4PL0mc0isRwxspWE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/me",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"me"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ChangePassword",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyNWQyY2Q5OS04NTg4LTRjNzAtOTcyNC0xNmQyY2M5OWM5NmEiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QxMEB0ZXN0LmNvbSIsImp0aSI6IjAxOTYwYjNiLWVlYjAtN2JkYi04NDQ0LTQxN2JhMTIxZDcxNyIsImV4cCI6MTc0Mzk0Njk5OSwiaXNzIjoiU3lyaWFOZXdzIEFwcCIsImF1ZCI6IlN5cmlhTmV3cyBVc2VycyJ9.QIMHaIZaBkjDcKiUVbVViZisqhUTK1n9a4xkVxQ1o-c",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"CurrentPassword\" : \"P@ssword1234\",\r\n    \"NewPassword\" : \"P@ssword123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/me/change-password",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"me",
+										"change-password"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Mebers",
+					"item": [
+						{
+							"name": "Saved Articles",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDQ3MGY0Mi1mZmRhLTRlZmItOWY1NC01NjM0ZmMwYmUxNjAiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QwMi5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MGJjOS01YmZmLTcxNjgtODZhMy1hZmYyY2FkZDkwM2EiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ4MjUxMjM1LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.B9ZpF74zC9UuQDyvVz5ZneBVa3xORus5teOtEOsdJw8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/articles/saved",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"articles",
+										"saved"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Liked Articles",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDQ3MGY0Mi1mZmRhLTRlZmItOWY1NC01NjM0ZmMwYmUxNjAiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QwMi5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MGJjOS01YmZmLTcxNjgtODZhMy1hZmYyY2FkZDkwM2EiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ4MjUxMjM1LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.B9ZpF74zC9UuQDyvVz5ZneBVa3xORus5teOtEOsdJw8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/articles/liked",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"articles",
+										"liked"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Followed Newspaper",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDQ3MGY0Mi1mZmRhLTRlZmItOWY1NC01NjM0ZmMwYmUxNjAiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QwMi5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MTA3NS0xNTFmLTc5ZDktYTY3Ni0yMjJhZWQ5NzA5NmQiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ4MzI5NTk4LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.eWhBRBJT1lkOz_cZtVPF3h8WoLOl7HTPUo-__5e3dpI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/followed",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"followed"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Commenting On Article",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDQ3MGY0Mi1mZmRhLTRlZmItOWY1NC01NjM0ZmMwYmUxNjAiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QwMi5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MTA3NS0xNTFmLTc5ZDktYTY3Ni0yMjJhZWQ5NzA5NmQiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ4MzI5NTk4LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.eWhBRBJT1lkOz_cZtVPF3h8WoLOl7HTPUo-__5e3dpI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Content\" : \"test test\",\r\n    \"ArticleID\" : \"0196ed59-75e3-7abb-ac12-d72bdc24aeb2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/articles/comments",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"articles",
+										"comments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Like Of Articles",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDQ3MGY0Mi1mZmRhLTRlZmItOWY1NC01NjM0ZmMwYmUxNjAiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QwMi5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MGJjOS01YmZmLTcxNjgtODZhMy1hZmYyY2FkZDkwM2EiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ4MjUxMjM1LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.B9ZpF74zC9UuQDyvVz5ZneBVa3xORus5teOtEOsdJw8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ArticleID\" : \"0196ed59-75e3-7abb-ac12-d72bdc24aeb2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/articles/likes",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"articles",
+										"likes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Following Newspaper",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDQ3MGY0Mi1mZmRhLTRlZmItOWY1NC01NjM0ZmMwYmUxNjAiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QwMi5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MGJjOS01YmZmLTcxNjgtODZhMy1hZmYyY2FkZDkwM2EiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ4MjUxMjM1LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.B9ZpF74zC9UuQDyvVz5ZneBVa3xORus5teOtEOsdJw8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"NewsPaperID\" : \"6d19556c-5f85-4076-95b4-f90b9079bf50\" \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/followed",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"followed"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update My Comment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDQ3MGY0Mi1mZmRhLTRlZmItOWY1NC01NjM0ZmMwYmUxNjAiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QwMi5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MTA3NS0xNTFmLTc5ZDktYTY3Ni0yMjJhZWQ5NzA5NmQiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ4MzI5NTk4LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.eWhBRBJT1lkOz_cZtVPF3h8WoLOl7HTPUo-__5e3dpI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Content\" : \"the test is successded\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/articles/comments/01971077-4c1d-798a-bc05-fbf9e64edded",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"articles",
+										"comments",
+										"01971077-4c1d-798a-bc05-fbf9e64edded"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete My Comment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDQ3MGY0Mi1mZmRhLTRlZmItOWY1NC01NjM0ZmMwYmUxNjAiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QwMi5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MTBhYi00ODg5LTc4MjItOGYyMS1iZTQzODU1M2ViMmQiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ4MzMzMTUwLCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.VHup-OGIKa57tWK8779kUqQt-BDjNjE-1Wq9S_nSLsc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/articles/comments/01971077-4c1d-798a-bc05-fbf9e64edded",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"articles",
+										"comments",
+										"01971077-4c1d-798a-bc05-fbf9e64edded"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Unlike",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDQ3MGY0Mi1mZmRhLTRlZmItOWY1NC01NjM0ZmMwYmUxNjAiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QwMi5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MGJjOS01YmZmLTcxNjgtODZhMy1hZmYyY2FkZDkwM2EiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ4MjUxMjM1LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.B9ZpF74zC9UuQDyvVz5ZneBVa3xORus5teOtEOsdJw8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/articles/0196ed59-75e3-7abb-ac12-d72bdc24aeb2/likes",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"articles",
+										"0196ed59-75e3-7abb-ac12-d72bdc24aeb2",
+										"likes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Unfollow",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDQ3MGY0Mi1mZmRhLTRlZmItOWY1NC01NjM0ZmMwYmUxNjAiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QwMi5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MTA3NS0xNTFmLTc5ZDktYTY3Ni0yMjJhZWQ5NzA5NmQiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ4MzI5NTk4LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.eWhBRBJT1lkOz_cZtVPF3h8WoLOl7HTPUo-__5e3dpI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/followed/943a0fa8-95ba-499b-88f6-3e87c99aef6f",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"followed",
+										"943a0fa8-95ba-499b-88f6-3e87c99aef6f"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Save Article",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDQ3MGY0Mi1mZmRhLTRlZmItOWY1NC01NjM0ZmMwYmUxNjAiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QwMi5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MTBhYi00ODg5LTc4MjItOGYyMS1iZTQzODU1M2ViMmQiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ4MzMzMTUwLCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.VHup-OGIKa57tWK8779kUqQt-BDjNjE-1Wq9S_nSLsc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ArticleID\" : \"01970692-97f2-7f98-a72e-d52164814f41\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/articles/saved",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"articles",
+										"saved"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Unsave",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDQ3MGY0Mi1mZmRhLTRlZmItOWY1NC01NjM0ZmMwYmUxNjAiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QwMi5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MTBhYi00ODg5LTc4MjItOGYyMS1iZTQzODU1M2ViMmQiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ4MzMzMTUwLCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.VHup-OGIKa57tWK8779kUqQt-BDjNjE-1Wq9S_nSLsc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/articles/saved/01970692-97f2-7f98-a72e-d52164814f41",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"articles",
+										"saved",
+										"01970692-97f2-7f98-a72e-d52164814f41"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update My Profile",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDQ3MGY0Mi1mZmRhLTRlZmItOWY1NC01NjM0ZmMwYmUxNjAiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QwMi5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MTA3NS0xNTFmLTc5ZDktYTY3Ni0yMjJhZWQ5NzA5NmQiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ4MzI5NTk4LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.eWhBRBJT1lkOz_cZtVPF3h8WoLOl7HTPUo-__5e3dpI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"FirstName\" : \"Anas\",\r\n    \"LastName\" : \"DY\",\r\n    \"Gender\" : true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/me",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"me"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "My Comments",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDQ3MGY0Mi1mZmRhLTRlZmItOWY1NC01NjM0ZmMwYmUxNjAiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QwMi5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MTBhYi00ODg5LTc4MjItOGYyMS1iZTQzODU1M2ViMmQiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ4MzMzMTUwLCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.VHup-OGIKa57tWK8779kUqQt-BDjNjE-1Wq9S_nSLsc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/my-comments",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"my-comments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change Profile Image",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDQ3MGY0Mi1mZmRhLTRlZmItOWY1NC01NjM0ZmMwYmUxNjAiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QwMi5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MTBmYS1lMWM3LTdkZGQtODdjYi0yY2I3YzM4YTNiMWEiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ4MzM4MzY2LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.d80UhxTQhoWZXU7cgOH0UEsErNLCOTWE3v5_o736MNI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "formFile",
+											"type": "file",
+											"src": "postman-cloud:///1f0206d6-7c28-4210-9976-f92aa3a2536c"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/me/profile-image",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"me",
+										"profile-image"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove Profile Image",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDQ3MGY0Mi1mZmRhLTRlZmItOWY1NC01NjM0ZmMwYmUxNjAiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QwMi5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MTBhYi00ODg5LTc4MjItOGYyMS1iZTQzODU1M2ViMmQiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ4MzMzMTUwLCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.VHup-OGIKa57tWK8779kUqQt-BDjNjE-1Wq9S_nSLsc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/me/profile-image",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"me",
+										"profile-image"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Articles By Date",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/articles/by-post-date",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"articles",
+										"by-post-date"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Articles By Most Viewed",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/articles/by-most-viewed",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"articles",
+										"by-most-viewed"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Articles By Tag",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/articles/by-tag/technology",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"articles",
+										"by-tag",
+										"technology"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Articles By Category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/articles/by-category/0196bf32-36a4-75ef-a34e-8a0586dc971c",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"articles",
+										"by-category",
+										"0196bf32-36a4-75ef-a34e-8a0586dc971c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Articles By Title",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/articles/by-title/technology",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"articles",
+										"by-title",
+										"technology"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search For Newspaper",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/search-newspaper/Rt",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"search-newspaper",
+										"Rt"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Read Article",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNmExOWU1Mi1iNjJmLTQzOGMtYTI5Mi1lNGJmNzM0MDljY2IiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QwMS5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk2ZjI0Mi01OWIzLTdiNWUtOTU1Yy0zZDRmNTkzMDIzNTYiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ3ODIyOTU2LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.VbKHi6MkrAAHmt6ad9GgE0kToq5JvjCgSJ1X23m5A7c",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/articles/0196ed59-75e3-7abb-ac12-d72bdc24aeb2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"articles",
+										"0196ed59-75e3-7abb-ac12-d72bdc24aeb2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Visit Newspaper Profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/newspaper/6d19556c-5f85-4076-95b4-f90b9079bf50",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"newspaper",
+										"6d19556c-5f85-4076-95b4-f90b9079bf50"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Visit Member Profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/974e87b8-3436-4a40-b188-f7d5e47ab61f",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"974e87b8-3436-4a40-b188-f7d5e47ab61f"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "My Profile",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDQ3MGY0Mi1mZmRhLTRlZmItOWY1NC01NjM0ZmMwYmUxNjAiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QwMi5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MTBmYS1lMWM3LTdkZGQtODdjYi0yY2I3YzM4YTNiMWEiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ4MzM4MzY2LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.d80UhxTQhoWZXU7cgOH0UEsErNLCOTWE3v5_o736MNI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/me",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"me"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Members Who Like Article",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/articles/01970692-97f2-7f98-a72e-d52164814f41/likes",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"articles",
+										"01970692-97f2-7f98-a72e-d52164814f41",
+										"likes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Following Of Newspaper",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/newspaper/dfd785f5-0df6-4817-98b0-ae9e3a772fe2/followers",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"newspaper",
+										"dfd785f5-0df6-4817-98b0-ae9e3a772fe2",
+										"followers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Articles Of Newspaper",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/newspaper/6d19556c-5f85-4076-95b4-f90b9079bf50/articles",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"newspaper",
+										"6d19556c-5f85-4076-95b4-f90b9079bf50",
+										"articles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change Password",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5Y2YwMjVlZS05MGRlLTQxNWQtYWVlNS04ZjE3MDRmN2UzM2MiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6ImFiZC5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk2ZTdjNy01MWE0LTcyYTAtYTZhNS00MTc4NjYwZTFlOTciLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ3NjQ3MTIxLCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.NILdFOA5dLbYWlQc1tiaL1q9VhPrZQRd-yN6F_pWqQc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"currentPassword\": \"\",\r\n    \"newPassword\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/me/change-password",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"me",
+										"change-password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Categories",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/categories",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get My profile Image",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDQ3MGY0Mi1mZmRhLTRlZmItOWY1NC01NjM0ZmMwYmUxNjAiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QwMi5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MTBmYS1lMWM3LTdkZGQtODdjYi0yY2I3YzM4YTNiMWEiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ4MzM4MzY2LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.d80UhxTQhoWZXU7cgOH0UEsErNLCOTWE3v5_o736MNI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/me/profile-image",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"me",
+										"profile-image"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Article Image",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5Y2YwMjVlZS05MGRlLTQxNWQtYWVlNS04ZjE3MDRmN2UzM2MiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6ImFiZC5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk2ZTdhNi0wYWVjLTdiZjQtYTRjYS1iYmI2NWU4ZmY0YmQiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ3NjQ0OTQwLCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.DPRv2t03QcaECWDh_rjfDSrXvD-pjtZ6cifIwsd2nXo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/articles/images/0196ed59-76a3-7062-8b0f-73a3199b345a-Technology-1 article.jpg",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"articles",
+										"images",
+										"0196ed59-76a3-7062-8b0f-73a3199b345a-Technology-1 article.jpg"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Newspaper Profile Image",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDQ3MGY0Mi1mZmRhLTRlZmItOWY1NC01NjM0ZmMwYmUxNjAiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QwMi5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MTBmYS1lMWM3LTdkZGQtODdjYi0yY2I3YzM4YTNiMWEiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ4MzM4MzY2LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.d80UhxTQhoWZXU7cgOH0UEsErNLCOTWE3v5_o736MNI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/newspapers/943a0fa8-95ba-499b-88f6-3e87c99aef6f/profile-image",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"newspapers",
+										"943a0fa8-95ba-499b-88f6-3e87c99aef6f",
+										"profile-image"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Member Profile Image",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5Y2YwMjVlZS05MGRlLTQxNWQtYWVlNS04ZjE3MDRmN2UzM2MiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6ImFiZC5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk2ZTdhNi0wYWVjLTdiZjQtYTRjYS1iYmI2NWU4ZmY0YmQiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ3NjQ0OTQwLCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.DPRv2t03QcaECWDh_rjfDSrXvD-pjtZ6cifIwsd2nXo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/members/14470f42-ffda-4efb-9f54-5634fc0be160/profile-image",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"members",
+										"14470f42-ffda-4efb-9f54-5634fc0be160",
+										"profile-image"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get My Profile Image",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDQ3MGY0Mi1mZmRhLTRlZmItOWY1NC01NjM0ZmMwYmUxNjAiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QwMi5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MTBmYS1lMWM3LTdkZGQtODdjYi0yY2I3YzM4YTNiMWEiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ4MzM4MzY2LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.d80UhxTQhoWZXU7cgOH0UEsErNLCOTWE3v5_o736MNI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/me/profile-image",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"me",
+										"profile-image"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Is Liked",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDQ3MGY0Mi1mZmRhLTRlZmItOWY1NC01NjM0ZmMwYmUxNjAiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QwMi5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MTBmYS1lMWM3LTdkZGQtODdjYi0yY2I3YzM4YTNiMWEiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ4MzM4MzY2LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.d80UhxTQhoWZXU7cgOH0UEsErNLCOTWE3v5_o736MNI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/articles/0196ed67-f279-7e4d-8201-b0aedcec5041/is-liked",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"articles",
+										"0196ed67-f279-7e4d-8201-b0aedcec5041",
+										"is-liked"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Is Saved",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDQ3MGY0Mi1mZmRhLTRlZmItOWY1NC01NjM0ZmMwYmUxNjAiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QwMi5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MTBmYS1lMWM3LTdkZGQtODdjYi0yY2I3YzM4YTNiMWEiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ4MzM4MzY2LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.d80UhxTQhoWZXU7cgOH0UEsErNLCOTWE3v5_o736MNI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/articles/0196ed59-75e3-7abb-ac12-d72bdc24aeb2/is-saved",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"articles",
+										"0196ed59-75e3-7abb-ac12-d72bdc24aeb2",
+										"is-saved"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Is Followed",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDQ3MGY0Mi1mZmRhLTRlZmItOWY1NC01NjM0ZmMwYmUxNjAiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QwMi5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MTBmYS1lMWM3LTdkZGQtODdjYi0yY2I3YzM4YTNiMWEiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ4MzM4MzY2LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.d80UhxTQhoWZXU7cgOH0UEsErNLCOTWE3v5_o736MNI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/newspapers/6d19556c-5f85-4076-95b4-f90b9079bf50/is-followed",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"newspapers",
+										"6d19556c-5f85-4076-95b4-f90b9079bf50",
+										"is-followed"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Report For Newspaper",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDQ3MGY0Mi1mZmRhLTRlZmItOWY1NC01NjM0ZmMwYmUxNjAiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QwMi5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MTBmYS1lMWM3LTdkZGQtODdjYi0yY2I3YzM4YTNiMWEiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ4MzM4MzY2LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.d80UhxTQhoWZXU7cgOH0UEsErNLCOTWE3v5_o736MNI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"NewspaperID\" : \"6d19556c-5f85-4076-95b4-f90b9079bf50\",\r\n    \"Title\" : \"Fake News\",\r\n    \"Message\" : \"this newspaper post newspaper\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/reports/report-for-newspaper",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"reports",
+										"report-for-newspaper"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Report For Article",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDQ3MGY0Mi1mZmRhLTRlZmItOWY1NC01NjM0ZmMwYmUxNjAiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QwMi5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MTBmYS1lMWM3LTdkZGQtODdjYi0yY2I3YzM4YTNiMWEiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ4MzM4MzY2LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.d80UhxTQhoWZXU7cgOH0UEsErNLCOTWE3v5_o736MNI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ArticleID\" : \"01970692-97f2-7f98-a72e-d52164814f41\",\r\n    \"Title\" : \"Not True\",\r\n    \"Message\" : \"this article is not true\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/reports/report-for-article",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"reports",
+										"report-for-article"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Notifications",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDQ3MGY0Mi1mZmRhLTRlZmItOWY1NC01NjM0ZmMwYmUxNjAiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QwMi5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MTBmYS1lMWM3LTdkZGQtODdjYi0yY2I3YzM4YTNiMWEiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ4MzM4MzY2LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.d80UhxTQhoWZXU7cgOH0UEsErNLCOTWE3v5_o736MNI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/notifications/true",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"notifications",
+										"true"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Read All Notifications",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDQ3MGY0Mi1mZmRhLTRlZmItOWY1NC01NjM0ZmMwYmUxNjAiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QwMi5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MTBmYS1lMWM3LTdkZGQtODdjYi0yY2I3YzM4YTNiMWEiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ4MzM4MzY2LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.d80UhxTQhoWZXU7cgOH0UEsErNLCOTWE3v5_o736MNI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/notifications",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"notifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Read Notification",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5Y2YwMjVlZS05MGRlLTQxNWQtYWVlNS04ZjE3MDRmN2UzM2MiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6ImFiZC5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk2ZTdhNi0wYWVjLTdiZjQtYTRjYS1iYmI2NWU4ZmY0YmQiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ3NjQ0OTQwLCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.DPRv2t03QcaECWDh_rjfDSrXvD-pjtZ6cifIwsd2nXo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/notifications/{NOTIFICATIONID}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"notifications",
+										"{NOTIFICATIONID}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification Count",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDQ3MGY0Mi1mZmRhLTRlZmItOWY1NC01NjM0ZmMwYmUxNjAiLCJ0eXAiOiJNZW1iZXIiLCJlbWFpbCI6InRlc3QwMi5tZW1iZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MTBmYS1lMWM3LTdkZGQtODdjYi0yY2I3YzM4YTNiMWEiLCJyb2xlIjoiTWVtYmVyIiwiZXhwIjoxNzQ4MzM4MzY2LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.d80UhxTQhoWZXU7cgOH0UEsErNLCOTWE3v5_o736MNI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/notifications/true/count",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"notifications",
+										"true",
+										"count"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Newspapers",
+					"item": [
+						{
+							"name": "Post Full Article",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2ZDE5NTU2Yy01Zjg1LTQwNzYtOTViNC1mOTBiOTA3OWJmNTAiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6InRlc3QwMi5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MDY4ZS1iYTA4LTc3MmQtYTVkZC1hOWU2NmJmYjE2ZDYiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ4MTYzNTA2LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.g7qfo15ykrtgPN1FklNRCznN45Y2eoexKYQCvo78hqc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "ArticleRequest.Title",
+											"value": "Politics & Society: The Intersection of Power and People\n",
+											"type": "text"
+										},
+										{
+											"key": "ArticleRequest.Description",
+											"value": "Politics shapes every aspect of society—from healthcare and education\nto economic policies and human rights. In an era of rapid globalization,\ntechnological disruption, and shifting cultural values, the relationship\nbetween governance and citizens has never been more complex.\nThis article explores key political trends, social movements,\nand the evolving dynamics between leaders and the communities they serve.\n",
+											"type": "text"
+										},
+										{
+											"key": "ArticleRequest.Content",
+											"value": "The Changing Face of Global Politics\n1. The Rise of Populism & Polarization\n    Right-Wing vs. Left-Wing Movements – Growing ideological divides in the U.S., Europe, and beyond.\n    Anti-Establishment Leaders – Figures like Trump, Bolsonaro, and Meloni challenging traditional politics.\n    Social Media’s Role – How platforms amplify outrage and misinformation, deepening divisions.\n2. Democracy Under Pressure\n    Election Integrity Concerns – Voter suppression, foreign interference, and distrust in results.\n    Authoritarian Resurgence – Crackdowns on dissent in Russia, China, Turkey, and elsewhere.\n    Youth Political Engagement – Gen Z and Millennials demanding change through protests and digital activism.\n3. Global Power Shifts\n    U.S.-China Rivalry – Trade wars, tech competition, and military tensions.\n    The Decline of Multilateralism – Challenges to the UN, WTO, and NATO.\n    Rise of the Global South – BRICS nations (Brazil, Russia, India, China, South Africa) gaining influence.\n\nSocial Movements Shaping the Future\n1. Climate Activism\n    From Greta Thunberg to Just Stop Oil – Protests pushing governments toward green policies.\n    Climate Refugees – How rising sea levels and droughts are forcing mass migrations.\n2. Gender & LGBTQ+ Rights\n    Roe v. Wade Overturned – The global fight over reproductive rights.\n    Trans Rights Battles – Legislation targeting healthcare and public participation.\n    #MeToo’s Lasting Impact – Corporate accountability and cultural shifts.\n3. Economic Inequality & Labor Movements\n    The Gig Economy Debate – Worker rights in the age of Uber and DoorDash.\n    Union Resurgence – Strikes in Hollywood, auto industries, and Amazon warehouses.\n    Universal Basic Income Experiments – Trials in Finland, Kenya, and California.\n\nTechnology’s Role in Politics & Society\n1. AI and Misinformation\n    Deepfake Elections – How AI-generated content could disrupt democracy.\n    Algorithmic Bias – Social media amplifying extremist views.\n2. Digital Governance\n    E-Voting & Blockchain – Could technology make elections more secure?\n    Surveillance States – China’s Social Credit System vs. Western privacy laws.\n3. The Future of Work & Urbanization\n    Remote Work Policies – How governments are adapting to hybrid economies.\n    Smart Cities – Data-driven urban planning in Singapore, Dubai, and Barcelona.\n\nChallenges Ahead\n    Migration Crises – Border policies in the U.S., Europe, and beyond.\n    Healthcare Access – Universal coverage vs. privatized systems.\n    Free Speech vs. Hate Speech – Balancing rights and safety online.\n\nConclusion\nPolitics and society are in constant flux, driven by technological\nadvances, cultural shifts, and grassroots activism. While polarization\nand distrust in institutions pose significant challenges,\nthey also create opportunities for reform and progress.\nThe future will depend on how societies balance freedom with equality,\ninnovation with ethics, and national interests with global cooperation.\n",
+											"type": "text"
+										},
+										{
+											"key": "ArticleRequest.CategoryID",
+											"value": "0196bf32-36a4-75ef-a34e-8a0586dc971c",
+											"type": "text"
+										},
+										{
+											"key": "Tags[0].TagName",
+											"value": "#gaza",
+											"type": "text"
+										},
+										{
+											"key": "Tags[1].TagName",
+											"value": "#palastine",
+											"type": "text"
+										},
+										{
+											"key": "Tags[2].TagName",
+											"value": "#political_news",
+											"type": "text"
+										},
+										{
+											"key": "Images[0].Placement",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "Images[0].File",
+											"type": "file",
+											"src": "postman-cloud:///1f03942c-e96c-4ee0-bfdb-f446fd04471d"
+										},
+										{
+											"key": "Images[1].Placement",
+											"value": "2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "Images[1].File",
+											"type": "file",
+											"src": "postman-cloud:///1f023624-e8bf-4e50-b507-abaff3746ab6",
+											"disabled": true
+										},
+										{
+											"key": "Images[2].Placement",
+											"value": "3",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "Images[2].File",
+											"type": "file",
+											"src": "postman-cloud:///1f025129-c890-45b0-9485-2892a1b4bc47",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/{{News}}/articles",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"articles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Set Images For Article",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NDNhMGZhOC05NWJhLTQ5OWItODhmNi0zZTg3Yzk5YWVmNmYiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6InRlc3QwMS5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk2ZWQ3OS1iNjM2LTczZWItYWE3MS02OTNmMjdmODRhMDUiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ3NzQyNjk4LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.ca6D_gf-91wa8VAZxoeHwvzqSJaDjGTJf2znLtiSDJk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fullImageRequests[0].Placement",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "fullImageRequests[0].File",
+											"type": "file",
+											"src": "postman-cloud:///1f0356ba-f766-44b0-8a76-29c62f78bf9c"
+										},
+										{
+											"key": "fullImageRequests[1].Placement",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "fullImageRequests[1].File",
+											"type": "file",
+											"src": "postman-cloud:///1f0356d7-56d9-4a70-b3a8-a4d387b8fe42"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/{{News}}/articles/0196ed67-f279-7e4d-8201-b0aedcec5041/set-images",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"articles",
+										"0196ed67-f279-7e4d-8201-b0aedcec5041",
+										"set-images"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Set Tags For Article",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NDNhMGZhOC05NWJhLTQ5OWItODhmNi0zZTg3Yzk5YWVmNmYiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6InRlc3QwMS5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk2ZjFhZC1iZGFjLTdjOTAtYTgyOS0zNzYxYTEyMTE1YjgiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ3ODEzMjE3LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.4b3q0qhePJ5PtV22yNwFokhUXDRQwrm1ovtODXSeDD4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "tagRequests[0].TagName",
+											"value": "#business",
+											"type": "text"
+										},
+										{
+											"key": "tagRequests[1].TagName",
+											"value": "#business_man",
+											"type": "text"
+										},
+										{
+											"key": "tagRequests[2].TagName",
+											"value": "#finance",
+											"type": "text"
+										},
+										{
+											"key": "tagRequests[3].TagName",
+											"value": "#money",
+											"type": "text"
+										},
+										{
+											"key": "tagRequests[4].TagName",
+											"value": "#economy",
+											"type": "text"
+										},
+										{
+											"key": "TagName",
+											"value": "Development",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/{{News}}/articles/0196ed67-f279-7e4d-8201-b0aedcec5041/set-tags",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"articles",
+										"0196ed67-f279-7e4d-8201-b0aedcec5041",
+										"set-tags"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Article",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NDNhMGZhOC05NWJhLTQ5OWItODhmNi0zZTg3Yzk5YWVmNmYiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6InRlc3QwMS5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk2ZjI0Ny04ZWJiLTcyODItYTg3Ny05MWMzYzg5MDA1ZjYiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ3ODIzMjk4LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.krRr0r8AtdnmdeaTidKW3dZJKGO1HRwlT0SQmNNoILM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Title\" : \"The Essentials of Business & Finance:\\nKey Strategies for Success _ updated\",\r\n    \"Description\" : \"Business and finance are the backbone of the global economy,\\ndriving growth, innovation, and wealth creation. Whether you're an\\nentrepreneur, investor, or corporate leader, understanding the fundamentals\\nof business operations and financial management is crucial for long-term success.\\nThis article explores key aspects of business and finance,\\nincluding strategies for profitability, investment principles, and emerging trends.\\n\",\r\n    \"Content\" : \"\\nThe Foundations of Business Success\\nRunning a successful business requires a combination of strategic planning, efficient operations,\\nand financial discipline. Key components include:\\n1. Business Planning & Strategy\\n    Market Research – Understanding customer needs and industry trends.\\n    Business Models – Choosing between B2B, B2C, e-commerce, or subscription-based models.\\n    Competitive Advantage – Differentiating through innovation, pricing, or branding.\\n2. Financial Management\\n    Budgeting & Cash Flow – Ensuring liquidity and avoiding financial shortfalls.\\n    Profit Margins – Balancing revenue growth with cost control.\\n    Funding & Investment – Exploring options like loans, venture capital, or bootstrapping.\\n3. Marketing & Sales\\n    Digital Marketing – Leveraging SEO, social media, and email campaigns.\\n    Customer Retention – Building loyalty through excellent service and engagement.\\n    Sales Strategies – Converting leads into paying customers with effective tactics.\\n\\nPersonal & Corporate Finance Principles\\nFinancial literacy is essential for both individuals and businesses. Key concepts include:\\n1. Investing Wisely\\n    Stocks, Bonds & ETFs – Diversifying portfolios to manage risk.\\n    Real Estate & Commodities – Alternative investments for wealth preservation.\\n    Retirement Planning – Utilizing 401(k), IRAs, and pension funds.\\n2. Debt Management\\n    Good vs. Bad Debt – Understanding when borrowing is beneficial (e.g., business expansion) vs. harmful (e.g., high-interest credit cards).\\n    Credit Score Improvement – Maintaining a strong credit profile for better loan terms.\\n3. Risk Management & Insurance\\n    Business Insurance – Protecting against liabilities, property damage, and lawsuits.\\n    Personal Insurance – Health, life, and disability coverage for financial security.\\n\\nEmerging Trends in Business & Finance\\nThe business and finance landscape is constantly evolving. Key trends shaping the future include:\\n1. Digital Transformation\\n    Fintech & Blockchain – Revolutionizing payments, banking, and decentralized finance (DeFi).\\n    AI & Automation – Enhancing financial analysis, customer service, and operational efficiency.\\n2. Sustainable & Ethical Business Practices\\n    ESG Investing – Environmental, Social, and Governance (ESG) criteria gaining importance.\\n    Circular Economy – Reducing waste through recycling and sustainable production.\\n3. Remote Work & Gig Economy\\n    Flexible Work Models – Companies adapting to hybrid and remote workforces.\\n    Freelancing & Side Hustles – More individuals diversifying income streams.\\n\\nConclusion\\nSuccess in business and finance requires a mix of strategic thinking,\\nfinancial literacy, and adaptability to changing trends. Whether managing\\na company or personal wealth, staying informed and making data-driven\\ndecisions will lead to sustainable growth. By embracing innovation\\nand sound financial practices,\\nbusinesses and individuals can thrive in an increasingly competitive world.\\n\",\r\n    \"CategoryID\" : \"0196bf31-ed79-76de-b16e-0d1bc35ac317\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/{{News}}/articles/0196ed67-f279-7e4d-8201-b0aedcec5041",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"articles",
+										"0196ed67-f279-7e4d-8201-b0aedcec5041"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Toggle Status For Article",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NDNhMGZhOC05NWJhLTQ5OWItODhmNi0zZTg3Yzk5YWVmNmYiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6InRlc3QwMS5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk2ZjI0Ny04ZWJiLTcyODItYTg3Ny05MWMzYzg5MDA1ZjYiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ3ODIzMjk4LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.krRr0r8AtdnmdeaTidKW3dZJKGO1HRwlT0SQmNNoILM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{News}}/articles/0196ed67-f279-7e4d-8201-b0aedcec5041/toggle-status",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"articles",
+										"0196ed67-f279-7e4d-8201-b0aedcec5041",
+										"toggle-status"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Calculate All Likes For Categories",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkZmQ3ODVmNS0wZGY2LTQ4MTctOThiMC1hZTllM2E3NzJmZTIiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6ImFiZC5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk2ZTgxNC0xZTc1LTc2ZWItOTlmNi00YWZjY2ZhMTRkZDciLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ3NjUyMTU0LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.DcwXs4mtFu7rtuZfOHG7wmRkFbseOrHHrLKSMLZM03o",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{News}}/categories/{CATEGORYID}/calculate-all-likes",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"categories",
+										"{CATEGORYID}",
+										"calculate-all-likes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Calculate All Views For Categories",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkZmQ3ODVmNS0wZGY2LTQ4MTctOThiMC1hZTllM2E3NzJmZTIiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6ImFiZC5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk2ZTgxNC0xZTc1LTc2ZWItOTlmNi00YWZjY2ZhMTRkZDciLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ3NjUyMTU0LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.DcwXs4mtFu7rtuZfOHG7wmRkFbseOrHHrLKSMLZM03o",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{News}}/categories/{CATEGORYID}/calculate-all-views",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"categories",
+										"{CATEGORYID}",
+										"calculate-all-views"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Used Categories",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkZmQ3ODVmNS0wZGY2LTQ4MTctOThiMC1hZTllM2E3NzJmZTIiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6ImFiZC5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk2ZWM2ZC01OTNjLTczZTAtYmY3ZS0yZDFhOTI2MjZlM2QiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ3NzI1MTExLCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.pdssex5xbMyvnE90eWsMB5jmhvGZjToPDz4zLvgz-4A",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{News}}/categories/used-categories",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"categories",
+										"used-categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Count All Likes",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NDNhMGZhOC05NWJhLTQ5OWItODhmNi0zZTg3Yzk5YWVmNmYiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6InRlc3QwMS5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk2ZjFkNy0zYWFjLTcxN2UtYmExNy0xMjJmZDgzMTc1ZjEiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ3ODE1OTM2LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.QaucwwFZwstIrHlMOgKKPHPUUWGMhRkJVtLs1ZF4bxI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{News}}/count-of-likes",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"count-of-likes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Count Of Views",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NDNhMGZhOC05NWJhLTQ5OWItODhmNi0zZTg3Yzk5YWVmNmYiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6InRlc3QwMS5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk2ZjI0MS1hMGY1LTc2NmUtYjFhOS02ZDg1MWRmMzIwZWYiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ3ODIyOTA5LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.cGW7RELLFApmcCaF9Z6PIoa2Y7VD9FbjbzLBSxoe8uY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{News}}/count-of-views",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"count-of-views"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Count Of Articles",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2ZDE5NTU2Yy01Zjg1LTQwNzYtOTViNC1mOTBiOTA3OWJmNTAiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6InRlc3QwMi5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MGIzMy1jZWMzLTdiOGMtOTE3Mi0wMzNkMTliOTIyNzEiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ4MjQxNDM0LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.5xjk1FyrCPXgjOrpdwgIwN6KHQ46zggxChkgflpuycY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{News}}/count-of-articles",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"count-of-articles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Used Tags",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NDNhMGZhOC05NWJhLTQ5OWItODhmNi0zZTg3Yzk5YWVmNmYiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6InRlc3QwMS5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk2ZjI0Ny04ZWJiLTcyODItYTg3Ny05MWMzYzg5MDA1ZjYiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ3ODIzMjk4LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.krRr0r8AtdnmdeaTidKW3dZJKGO1HRwlT0SQmNNoILM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{News}}/tags/used-tags",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"tags",
+										"used-tags"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update My Profile",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NDNhMGZhOC05NWJhLTQ5OWItODhmNi0zZTg3Yzk5YWVmNmYiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6InRlc3QwMS5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk2ZjI0Ny04ZWJiLTcyODItYTg3Ny05MWMzYzg5MDA1ZjYiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ3ODIzMjk4LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.krRr0r8AtdnmdeaTidKW3dZJKGO1HRwlT0SQmNNoILM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\" : \"Damascus Journal - updated\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/{{News}}/me",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"me"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change Profile Image",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NDNhMGZhOC05NWJhLTQ5OWItODhmNi0zZTg3Yzk5YWVmNmYiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6InRlc3QwMS5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk2ZjI0Ny04ZWJiLTcyODItYTg3Ny05MWMzYzg5MDA1ZjYiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ3ODIzMjk4LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.krRr0r8AtdnmdeaTidKW3dZJKGO1HRwlT0SQmNNoILM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "formFile",
+											"type": "file",
+											"src": "/F:/Programming/BackEnd/C#/Projects/Syria News/Content For Test/Images/Newspaper.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/{{News}}/me/profile-image",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"me",
+										"profile-image"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove Profile Image",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkZmQ3ODVmNS0wZGY2LTQ4MTctOThiMC1hZTllM2E3NzJmZTIiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6ImFiZC5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk2ZTdmMy0zODcyLTc5MTItYTljMi02YjU0MjdlYmIxZmEiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ3NjQ5OTk4LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.4nUAS19JzX7epDX18IwCWptt5XuA3v6y0JaQb2Fw1qY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{News}}/me/profile-image",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"me",
+										"profile-image"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "My Articles",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkZmQ3ODVmNS0wZGY2LTQ4MTctOThiMC1hZTllM2E3NzJmZTIiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6ImFiZC5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk2ZTdmMy0zODcyLTc5MTItYTljMi02YjU0MjdlYmIxZmEiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ3NjQ5OTk4LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.4nUAS19JzX7epDX18IwCWptt5XuA3v6y0JaQb2Fw1qY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{News}}/articles",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"articles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show Member Likes For Article",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkZmQ3ODVmNS0wZGY2LTQ4MTctOThiMC1hZTllM2E3NzJmZTIiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6ImFiZC5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk2ZTdmMy0zODcyLTc5MTItYTljMi02YjU0MjdlYmIxZmEiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ3NjQ5OTk4LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.4nUAS19JzX7epDX18IwCWptt5XuA3v6y0JaQb2Fw1qY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{News}}/articles/{ARTICLEID}/likes",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"articles",
+										"{ARTICLEID}",
+										"likes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Visit Member Profile",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkZmQ3ODVmNS0wZGY2LTQ4MTctOThiMC1hZTllM2E3NzJmZTIiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6ImFiZC5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk2ZTdmMy0zODcyLTc5MTItYTljMi02YjU0MjdlYmIxZmEiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ3NjQ5OTk4LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.4nUAS19JzX7epDX18IwCWptt5XuA3v6y0JaQb2Fw1qY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{News}}/visit-member-profile/{MEMBERID}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"visit-member-profile",
+										"{MEMBERID}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "My Profile",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NDNhMGZhOC05NWJhLTQ5OWItODhmNi0zZTg3Yzk5YWVmNmYiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6InRlc3QwMS5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk2ZjI0Ny04ZWJiLTcyODItYTg3Ny05MWMzYzg5MDA1ZjYiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ3ODIzMjk4LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.krRr0r8AtdnmdeaTidKW3dZJKGO1HRwlT0SQmNNoILM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{News}}/me",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"me"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Comments For Article",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2ZDE5NTU2Yy01Zjg1LTQwNzYtOTViNC1mOTBiOTA3OWJmNTAiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6InRlc3QwMi5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MDZkYy01YTg4LTcwMWEtODFkOC05NmFlODcwMGJhZWEiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ4MTY4NTkzLCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.37SCpNPzhWFch7DZ0tRXd7pExyDznEm4Z2TibvYcPzw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{News}}/articles/01970692-97f2-7f98-a72e-d52164814f41/comments",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"articles",
+										"01970692-97f2-7f98-a72e-d52164814f41",
+										"comments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Read Article",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NDNhMGZhOC05NWJhLTQ5OWItODhmNi0zZTg3Yzk5YWVmNmYiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6InRlc3QwMS5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk2ZjI0Ny04ZWJiLTcyODItYTg3Ny05MWMzYzg5MDA1ZjYiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ3ODIzMjk4LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.krRr0r8AtdnmdeaTidKW3dZJKGO1HRwlT0SQmNNoILM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{News}}/articles/0196ed67-f279-7e4d-8201-b0aedcec5041",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"articles",
+										"0196ed67-f279-7e4d-8201-b0aedcec5041"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change Password",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2ZDE5NTU2Yy01Zjg1LTQwNzYtOTViNC1mOTBiOTA3OWJmNTAiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6InRlc3QwMi5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MGIzMy1jZWMzLTdiOGMtOTE3Mi0wMzNkMTliOTIyNzEiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ4MjQxNDM0LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.5xjk1FyrCPXgjOrpdwgIwN6KHQ46zggxChkgflpuycY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"currentPassword\": \"P@ssword123-changed02\",\r\n    \"newPassword\": \"P@ssword123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/{{News}}/me/change-password",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"me",
+										"change-password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Categories",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkZmQ3ODVmNS0wZGY2LTQ4MTctOThiMC1hZTllM2E3NzJmZTIiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6ImFiZC5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk2ZTdmMy0zODcyLTc5MTItYTljMi02YjU0MjdlYmIxZmEiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ3NjQ5OTk4LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.4nUAS19JzX7epDX18IwCWptt5XuA3v6y0JaQb2Fw1qY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{News}}/categories",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get My Profile Image",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NDNhMGZhOC05NWJhLTQ5OWItODhmNi0zZTg3Yzk5YWVmNmYiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6InRlc3QwMS5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk2ZjI0Ny04ZWJiLTcyODItYTg3Ny05MWMzYzg5MDA1ZjYiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ3ODIzMjk4LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.krRr0r8AtdnmdeaTidKW3dZJKGO1HRwlT0SQmNNoILM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{News}}/me/profile-image",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"me",
+										"profile-image"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Member Profile Image",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NDNhMGZhOC05NWJhLTQ5OWItODhmNi0zZTg3Yzk5YWVmNmYiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6InRlc3QwMS5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk2ZjI0Ny04ZWJiLTcyODItYTg3Ny05MWMzYzg5MDA1ZjYiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ3ODIzMjk4LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.krRr0r8AtdnmdeaTidKW3dZJKGO1HRwlT0SQmNNoILM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{News}}/members/04dee028-9f31-40ec-8a2c-e82bcadab864/profile-image",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"members",
+										"04dee028-9f31-40ec-8a2c-e82bcadab864",
+										"profile-image"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Article Image",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NDNhMGZhOC05NWJhLTQ5OWItODhmNi0zZTg3Yzk5YWVmNmYiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6InRlc3QwMS5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk2ZWQ3OS1iNjM2LTczZWItYWE3MS02OTNmMjdmODRhMDUiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ3NzQyNjk4LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.ca6D_gf-91wa8VAZxoeHwvzqSJaDjGTJf2znLtiSDJk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{News}}/articles/images/0196ed82-30d2-71b2-ab96-9d078f77c7d2-Business And Finance art.png",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"articles",
+										"images",
+										"0196ed82-30d2-71b2-ab96-9d078f77c7d2-Business And Finance art.png"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Report For Member",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2ZDE5NTU2Yy01Zjg1LTQwNzYtOTViNC1mOTBiOTA3OWJmNTAiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6InRlc3QwMi5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MDcxMC0yODI0LTc4ZjctYmM0YS1kNzZlMWFhZmZmYWUiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ4MTcxOTg4LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.YyepVLUpTwus1_ToeDuHEBcT8ktoKMiIeyf8ZAaVnSE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"MemberID\" : \"14470f42-ffda-4efb-9f54-5634fc0be160\",\r\n    \"Title\": \"Respect\",\r\n    \"Message\" : \"this member comment on my articles with no any respect i hope to take the needed process with him\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/{{News}}/reports/report-for-member",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"reports",
+										"report-for-member"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Report For Admin",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2ZDE5NTU2Yy01Zjg1LTQwNzYtOTViNC1mOTBiOTA3OWJmNTAiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6InRlc3QwMi5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MDcxMC0yODI0LTc4ZjctYmM0YS1kNzZlMWFhZmZmYWUiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ4MTcxOTg4LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.YyepVLUpTwus1_ToeDuHEBcT8ktoKMiIeyf8ZAaVnSE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Title\" : \"categories not enough\",\r\n    \"Message\" : \"please the supported categories is not enough, so i hope if you add new category(Engineering)\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/{{News}}/reports/report-for-ask-service",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"reports",
+										"report-for-ask-service"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Notifications",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2ZDE5NTU2Yy01Zjg1LTQwNzYtOTViNC1mOTBiOTA3OWJmNTAiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6InRlc3QwMi5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MDcxMC0yODI0LTc4ZjctYmM0YS1kNzZlMWFhZmZmYWUiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ4MTcxOTg4LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.YyepVLUpTwus1_ToeDuHEBcT8ktoKMiIeyf8ZAaVnSE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{News}}/notifications/true",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"notifications",
+										"true"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Read All Notifications",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2ZDE5NTU2Yy01Zjg1LTQwNzYtOTViNC1mOTBiOTA3OWJmNTAiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6InRlc3QwMi5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MDcxMC0yODI0LTc4ZjctYmM0YS1kNzZlMWFhZmZmYWUiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ4MTcxOTg4LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.YyepVLUpTwus1_ToeDuHEBcT8ktoKMiIeyf8ZAaVnSE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{News}}/notifications",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"notifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Read Notification",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkZmQ3ODVmNS0wZGY2LTQ4MTctOThiMC1hZTllM2E3NzJmZTIiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6ImFiZC5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk2ZTdmMy0zODcyLTc5MTItYTljMi02YjU0MjdlYmIxZmEiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ3NjQ5OTk4LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.4nUAS19JzX7epDX18IwCWptt5XuA3v6y0JaQb2Fw1qY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{News}}/notifications/0196e7e6-3547-7e93-877c-531c93e7b661",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"notifications",
+										"0196e7e6-3547-7e93-877c-531c93e7b661"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Count Of Notifications",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2ZDE5NTU2Yy01Zjg1LTQwNzYtOTViNC1mOTBiOTA3OWJmNTAiLCJ0eXAiOiJOZXdzUGFwZXIiLCJlbWFpbCI6InRlc3QwMi5uZXdzcGFwZXJAdGVtbC5uZXQiLCJqdGkiOiIwMTk3MGIzMy1jZWMzLTdiOGMtOTE3Mi0wMzNkMTliOTIyNzEiLCJyb2xlIjoiTmV3c3BhcGVyIiwiZXhwIjoxNzQ4MjQxNDM0LCJpc3MiOiJTeXJpYU5ld3MgQXBwIiwiYXVkIjoiU3lyaWFOZXdzIFVzZXJzIn0.5xjk1FyrCPXgjOrpdwgIwN6KHQ46zggxChkgflpuycY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{News}}/notifications/true/count",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{News}}",
+										"notifications",
+										"true",
+										"count"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Admins",
+					"item": [
+						{
+							"name": "Toggle Status For Newspaper",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/newspapers/toggle-status/{NEWSPAPERID}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"newspapers",
+										"toggle-status",
+										"{NEWSPAPERID}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Toggle Status For Member",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/members/toggle-status/{MEMBERID}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"members",
+										"toggle-status",
+										"{MEMBERID}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Toggle Status For Article",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/newspapers/articles/toggle-status/{ARTICLEID}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"newspapers",
+										"articles",
+										"toggle-status",
+										"{ARTICLEID}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Confirm Newspaper Manually",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/newspapers/{NEWSPAPERID}/confirm-manually",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"newspapers",
+										"{NEWSPAPERID}",
+										"confirm-manually"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "See New Articles",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "newspapers/articles/{ACCORDING_TO_POSTED}",
+									"host": [
+										"newspapers"
+									],
+									"path": [
+										"articles",
+										"{ACCORDING_TO_POSTED}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "See New Articles By Category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/newspapers/articles/{ACCORDING_TO_POSTED}/by-category/{CATEGORYID}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"newspapers",
+										"articles",
+										"{ACCORDING_TO_POSTED}",
+										"by-category",
+										"{CATEGORYID}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "See Articles By Tag",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/newspapers/articles/{ACCORDING_TO_POSTED}/by-tag/{TAGID}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"newspapers",
+										"articles",
+										"{ACCORDING_TO_POSTED}",
+										"by-tag",
+										"{TAGID}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "See Articles By Title",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/newspaper/articles/{ACCORDING_TO_POST}/by-title?title=test ",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"newspaper",
+										"articles",
+										"{ACCORDING_TO_POST}",
+										"by-title"
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "test "
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "See Articles By Views",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/newspapers/articles/{ACCORDING_TO_POST}/by-views",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"newspapers",
+										"articles",
+										"{ACCORDING_TO_POST}",
+										"by-views"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search About Newspaper",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/newspapers/{NEWSPAPER_NAME}/{ACCORDING_TO_ACTIVATE}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"newspapers",
+										"{NEWSPAPER_NAME}",
+										"{ACCORDING_TO_ACTIVATE}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Visit Newspaper Profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/newspapers/{NEWSPAPERID}/{ACCORDING_TO_ACTIVATE}/profile",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"newspapers",
+										"{NEWSPAPERID}",
+										"{ACCORDING_TO_ACTIVATE}",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Articles Of Newspaper",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/newspapers/{NEWSPAPERID}/articles/{ACCORDING_TO_POST}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"newspapers",
+										"{NEWSPAPERID}",
+										"articles",
+										"{ACCORDING_TO_POST}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Comments Of Article",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/newspapers/articles/{ARTICLEID}/comments",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"newspapers",
+										"articles",
+										"{ARTICLEID}",
+										"comments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Likes For Article",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/newspapers/articles/{ARTICLEID}/likes",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"newspapers",
+										"articles",
+										"{ARTICLEID}",
+										"likes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Comments Of Member",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/members/{MEMBERID}/{ACCORDING_TO_ACTIVE}/comments",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"members",
+										"{MEMBERID}",
+										"{ACCORDING_TO_ACTIVE}",
+										"comments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Member Follows",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/members/{MEMBERID}/follows",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"members",
+										"{MEMBERID}",
+										"follows"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Member Saves",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/members/{MEMBERID}/{ACCORDING_TO_ACTIVE}/{ACCORDING_TO_POST}/saves",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"members",
+										"{MEMBERID}",
+										"{ACCORDING_TO_ACTIVE}",
+										"{ACCORDING_TO_POST}",
+										"saves"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Member Likes",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/members/{MEMBERID}/{ACCORDING_TO_ACTIVE}/{ACCORDING_TO_POST}/likes",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"members",
+										"{MEMBERID}",
+										"{ACCORDING_TO_ACTIVE}",
+										"{ACCORDING_TO_POST}",
+										"likes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Visit Member Profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/members/{MEMBERID}/{ACCORDING_TO_ACTIVE}/profile",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"members",
+										"{MEMBERID}",
+										"{ACCORDING_TO_ACTIVE}",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove Comment",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/members/comments/{COMMENTID}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"members",
+										"comments",
+										"{COMMENTID}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Read Article",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/newspapers/articles/{ARTICLEID}/{ACCORDING_TO_POST}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"newspapers",
+										"articles",
+										"{ARTICLEID}",
+										"{ACCORDING_TO_POST}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5YTBkOGQ2Mi1mYWQxLTQ4MDMtYjc2OC01ZDIyMTUzZmQxMWMiLCJ0eXAiOiJBZG1pbiIsImVtYWlsIjoiYWRtaW5AU3lyaWEtTmV3cy5jb20iLCJqdGkiOiIwMTk2YmYyZi0xODdhLTdhNGEtYmNmNC01OWY4YzQ2ZDEyNmUiLCJyb2xlIjoiQWRtaW4iLCJleHAiOjE3NDY5NjYwNTYsImlzcyI6IlN5cmlhTmV3cyBBcHAiLCJhdWQiOiJTeXJpYU5ld3MgVXNlcnMifQ.oUK0Ii37cwo9OPe90-UZ5uvd2zK74LqcHJqGkavdm3A",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"CategoryName\" : \"history & Geography\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/categories",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Unpublish Articles By Categoy",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/categories/{CATEGORYID}/unpublish-articles-by-category",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"categories",
+										"{CATEGORYID}",
+										"unpublish-articles-by-category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Tag",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5YTBkOGQ2Mi1mYWQxLTQ4MDMtYjc2OC01ZDIyMTUzZmQxMWMiLCJ0eXAiOiJBZG1pbiIsImVtYWlsIjoiYWRtaW5AU3lyaWEtTmV3cy5jb20iLCJqdGkiOiIwMTk2NzZhNC02MDYwLTcwY2MtODdjYy1mNjkyMDc3Y2Q0MDUiLCJyb2xlIjoiQWRtaW4iLCJleHAiOjE3NDU3NDkwMDYsImlzcyI6IlN5cmlhTmV3cyBBcHAiLCJhdWQiOiJTeXJpYU5ld3MgVXNlcnMifQ.5GAM6wV0yhwtcyY5IcNfV6mU1tuc3l0kzIIg3MwoSKs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"TagName\" : \"automotive\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/tags",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"tags"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Categories",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/categories",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Article Image",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/articles/images/{IMAGENAME}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"articles",
+										"images",
+										"{IMAGENAME}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Member Profile Image",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/members/{MEMBERID}/profile-image",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"members",
+										"{MEMBERID}",
+										"profile-image"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Newspaper  Profile Image",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/newspapers/{NEWSPAPERID}/profile-image",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"newspapers",
+										"{NEWSPAPERID}",
+										"profile-image"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Roles",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/roles/false",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"roles",
+										"false"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Role By ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/roles/{ROLEID}/false",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"roles",
+										"{ROLEID}",
+										"false"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Role",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/roles",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"roles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Role",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/roles/{ROLEID}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"roles",
+										"{ROLEID}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Notifications",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/notifications/true",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"notifications",
+										"true"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Read Notification",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/notifications/{NOTIFICATIONID}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"notifications",
+										"{NOTIFICATIONID}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Read All Notifications",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/notifications",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"notifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Count Of Notifications",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Adm}}/notifications/true/count",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Adm}}",
+										"notifications",
+										"true",
+										"count"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Visitors",
+					"item": [
+						{
+							"name": "New Articles By Date",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/articles/by-post-date",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"articles",
+										"by-post-date"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Articles By Most Viewed",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/articles/by-most-viewed",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"articles",
+										"by-most-viewed"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Articles By Tag",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/articles/by-tag/{TagName}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"articles",
+										"by-tag",
+										"{TagName}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Articles By Category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/articles/by-category/{CategoryID}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"articles",
+										"by-category",
+										"{CategoryID}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Articles By Title",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/articles/by-title/{title}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"articles",
+										"by-title",
+										"{title}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search For Newspaper",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/search-newspaper/{newspaperName}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"search-newspaper",
+										"{newspaperName}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Read Article",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/articles/{ArticleID}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"articles",
+										"{ArticleID}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "visit newspaper profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/newspaper/{newspaperID}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"newspaper",
+										"{newspaperID}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Visit Member Profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/{memberID}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"{memberID}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Members Who Like Article",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/articles/{articleID}/likes",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"articles",
+										"{articleID}",
+										"likes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Following Of Newspaper",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/newspaper/{newspaperID}/followers",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"newspaper",
+										"{newspaperID}",
+										"followers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Articles Of Newspaper",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/newspaper/{newspaperID}/articles",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"newspaper",
+										"{newspaperID}",
+										"articles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Categories",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/categories",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Article Image",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/articles/images/{IMAGENAME}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"articles",
+										"images",
+										"{IMAGENAME}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Newspaper Profile Image",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/newspapers/{NEWSPAPERID}/profile-image",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"newspapers",
+										"{NEWSPAPERID}",
+										"profile-image"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Member Profile Image",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/{{Mem}}/members/{MEMBERID}/profile-image",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"{{Mem}}",
+										"members",
+										"{MEMBERID}",
+										"profile-image"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Health Checks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/health",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"health"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
