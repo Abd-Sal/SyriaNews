@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification Code</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            padding: 40px 30px;
+        }
+
+        .logo {
+            margin-bottom: 30px;
+        }
+
+            .logo h1 {
+                color: #4a6cf7;
+                font-size: 28px;
+                font-weight: 700;
+            }
+
+        .title {
+            margin-bottom: 20px;
+        }
+
+            .title h2 {
+                color: #333;
+                font-size: 24px;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+
+            .title p {
+                color: #666;
+                font-size: 16px;
+                line-height: 1.5;
+            }
+
+        .verification-code {
+            background: linear-gradient(135deg, #4a6cf7 0%, #82a0ff 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            word-break: break-all;
+            box-shadow: 0 5px 15px rgba(74, 108, 247, 0.3);
+        }
+
+        .instructions {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 25px 0;
+            text-align: left;
+        }
+
+            .instructions h3 {
+                color: #444;
+                font-size: 18px;
+                margin-bottom: 15px;
+            }
+
+            .instructions ol {
+                padding-left: 20px;
+                color: #555;
+                line-height: 1.6;
+            }
+
+            .instructions li {
+                margin-bottom: 10px;
+            }
+
+        .footer {
+            margin-top: 30px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            .verification-code {
+                padding: 20px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>SecureVerify</h1>
+        </div>
+
+        <div class="title">
+            <h2>Your Verification Code</h2>
+            <p>Use this code to complete your verification process</p>
+        </div>
+
+        <div class="verification-code">
+            [CODE]
+        </div>
+
+        <div class="instructions">
+            <h3>How to use this code:</h3>
+            <ol>
+                <li>Copy the entire code above</li>
+                <li>Return to the original verification page</li>
+                <li>Paste the code in the verification field</li>
+                <li>Complete the verification process</li>
+            </ol>
+        </div>
+
+        <div class="footer">
+            <p>This code will expire in 10 minutes for security reasons</p>
+            <p>If you didn't request this code, please ignore this message</p>
+        </div>
+    </div>
+</body>
+</html>

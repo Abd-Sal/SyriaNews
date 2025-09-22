@@ -8,22 +8,22 @@ public class UnitOfWork : IUnitOfWork
         UserManager<ApplicationUser> applicationUser,
         IJwtProvider jwtProvider,
         RoleManager<ApplicationRole> roleManager,
-        IConfiguration configuration,
         HybridCache hybridCache,
         SignInManager<ApplicationUser> signInManager,
         IOptions<ArticleImages> articleImagesOptions,
         IOptions<ProfileImages> profileImagesOption,
         IWebHostEnvironment webHostEnvironment,
-        IOptions<MailSettings> mailerSettings,
-        ILogger<VisitorService> visitorLogger
+        ILogger<VisitorService> visitorLogger,
+        INotificationSender notificationSender
     )
     {
         UserService = new UserService(applicationUser, appDbContext, mapper);
         AuthService = new AuthService
-            (applicationUser, jwtProvider, signInManager, mailerSettings, appDbContext);
+            (applicationUser, jwtProvider, signInManager, appDbContext, notificationSender);
         VisitorService = new VisitorService
             (appDbContext, mapper, applicationUser, hybridCache,
-            UserService, profileImagesOption, articleImagesOptions, webHostEnvironment, mailerSettings, visitorLogger);
+            UserService, profileImagesOption, articleImagesOptions, webHostEnvironment, visitorLogger,
+            notificationSender);
         NewsPaperService = new NewsPaperService(appDbContext, mapper, hybridCache, VisitorService,
              articleImagesOptions, profileImagesOption);
         MemberService = new MemberService(appDbContext, VisitorService, profileImagesOption, mapper, hybridCache);

@@ -2,9 +2,9 @@
 
 public class ConstantStrings
 {
-    public static string Origin = "https://localhost:5000";
+    public readonly static string Origin = "https://localhost:5000";
 
-    public static string AllowedOrigin = "AllowedOrigins";
+    public readonly static string AllowedOrigin = "AllowedOrigins";
 
     public static (string Title, string Message) NewspaperPostNewArticle(string newspaperName)
         => new("New Article",
@@ -22,8 +22,24 @@ public class ConstantStrings
         => new("New Follow",
               $"{memberFullName} follow you");
 
-    public static (string Title, string Message) BlockUser
+    public readonly static (string Title, string Message) BlockUser
         = new("Blocked",
               "your account is blocked");
+
+    public static (string EmailSubject, string EmailBody) ConfirmationEmail(string name, string code, string id)
+        => new(
+            "✅ Syria News: Email Confirmation",
+            File.ReadAllText("HelperTools\\EmailConfirmationBody.html")
+                .Replace("[CLIENT_NAME]", name)
+                .Replace("[VERIFICATION_URL]",
+                $"{Origin}/auth/confirm-email?UserID={id}&Code={code}")
+        );
+
+    public static (string EmailSubject, string EmailBody) ChangePasswordEmail(string code)
+        => new(
+            "✅ Syria News: Change Password",
+            File.ReadAllText("CodeEmailBody.html")
+                .Replace("[CODE]", code)
+        );
 
 }

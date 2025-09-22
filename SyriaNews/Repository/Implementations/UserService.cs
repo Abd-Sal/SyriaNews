@@ -1,7 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Polly;
-
-namespace SyriaNews.Repository.Implementations;
+﻿namespace SyriaNews.Repository.Implementations;
 
 public class UserService(
     UserManager<ApplicationUser> userManager,

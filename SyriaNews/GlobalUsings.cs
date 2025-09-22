@@ -17,7 +17,8 @@ global using Microsoft.EntityFrameworkCore.Query;
 global using Microsoft.EntityFrameworkCore.Diagnostics;
 global using Microsoft.AspNetCore.SignalR;
 
-global using System.Text.Json;
+global using System.Net;
+global using System.Net.Mail;
 global using System.Linq.Dynamic.Core;
 global using System.ComponentModel.DataAnnotations;
 global using System.Threading.RateLimiting;
@@ -33,10 +34,6 @@ global using HealthChecks.UI.Client;
 
 global using Hangfire;
 global using HangfireBasicAuthenticationFilter;
-
-global using MimeKit;
-global using MailKit.Net.Smtp;
-global using MailKit.Security;
 
 global using FluentValidation;
 
@@ -62,7 +59,6 @@ global using SyriaNews.Repository.Implementations;
 global using SyriaNews.ResultsExtension;
 global using SyriaNews.UnitOfWork;
 global using SyriaNews.Abstractions;
-global using SyriaNews.Models;
 global using SyriaNews.Enums;
 global using SyriaNews.Repository.Interfaces;
 global using SyriaNews.Errors;

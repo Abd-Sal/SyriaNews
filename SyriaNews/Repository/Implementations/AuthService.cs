@@ -4,15 +4,15 @@ public class AuthService(
     UserManager<ApplicationUser> _userManager,
     IJwtProvider _jwtProvider,
     SignInManager<ApplicationUser> signInManager,
-    IOptions<MailSettings> mailerSettingOptions,
-    AppDbContext appDbContext
+    AppDbContext appDbContext,
+    INotificationSender notificationSender
     ) : IAuthService
 {
     private readonly UserManager<ApplicationUser> userManager = _userManager;
     private readonly IJwtProvider jwtProvider = _jwtProvider;
     private readonly SignInManager<ApplicationUser> signInManager = signInManager;
     private readonly AppDbContext appDbContext = appDbContext;
-    private readonly MailSettings mailerSettingOptions = mailerSettingOptions.Value;
+    private readonly INotificationSender notificationSender = notificationSender;
     private readonly int _refreshTokenExpiryDays = 30;
     public async Task<Result<AuthResponse>> GetTokenAsync
         (LoginRequest loginRequest, CancellationToken cancellationToken = default)
@@ -146,16 +146,14 @@ public class AuthService(
         if(user.EmailConfirmed)
             return Result.Failure(UserErrors.DuplicatedConfirmationUser);
 
-        string name = await getName(user);
+        string name = await GetName(user);
 
         var code = await userManager.GenerateEmailConfirmationTokenAsync(user);
         code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
 
-        var origin = ConstantStrings.Origin;
-        BackgroundJob.Enqueue(() =>
-            EmailSendingHelp.SendEmailAsync($"{name}", user, code, origin!, mailerSettingOptions)
-        );
-        await Task.CompletedTask;
+        (string EmailSubject, string EmailBody) = ConstantStrings.ConfirmationEmail(name, code, user.Id);
+        notificationSender.SendEmailAsync(user.Email!, EmailSubject,
+            EmailBody);
 
         return Result.Success();
     }
@@ -171,14 +169,12 @@ public class AuthService(
         if (user.EmailConfirmed)
             return Result.Failure(UserErrors.EmailNotConfirmedUser);
 
-        string name = await getName(user);
-
         var code = await userManager.GeneratePasswordResetTokenAsync(user);
         code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
 
-        var origin = ConstantStrings.Origin;
-
-        await EmailSendingHelp.SendResetPasswordEmailAsync($"{name}", user, code, origin!, mailerSettingOptions);
+        (string EmailSubject, string EmailBody) = ConstantStrings.ChangePasswordEmail(code);
+        notificationSender.SendEmailAsync(user.Email!, EmailSubject,
+            EmailBody);
 
         return Result.Success();
     }
@@ -205,7 +201,7 @@ public class AuthService(
         return Result.Failure(new Error(error.Code, error.Description, StatusCodes.Status401Unauthorized));
     }
 
-    private async Task<string> getName(ApplicationUser user)
+    private async Task<string> GetName(ApplicationUser user)
     {
         if(user.TypeUser == UserTypes.Member.ToString())
         {

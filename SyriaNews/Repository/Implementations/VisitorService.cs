@@ -1,6 +1,4 @@
-﻿using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
-
-namespace SyriaNews.Repository.Implementations;
+﻿namespace SyriaNews.Repository.Implementations;
 
 public class VisitorService(
     AppDbContext appDbContext,
@@ -11,8 +9,8 @@ public class VisitorService(
     IOptions<ProfileImages> profileImages,
     IOptions<ArticleImages> articleImageOptions,
     IWebHostEnvironment webHostEnvironment,
-    IOptions<MailSettings> mailerSettingOptions,
-    ILogger<VisitorService> logger
+    ILogger<VisitorService> logger,
+    INotificationSender notificationSender
     ) : IVisitorService
 {
     private readonly AppDbContext appDbContext = appDbContext;
@@ -22,7 +20,7 @@ public class VisitorService(
     private readonly IUserService userService = userService;
     private readonly IWebHostEnvironment webHostEnvironment = webHostEnvironment;
     private readonly ILogger<VisitorService> logger = logger;
-    private readonly MailSettings mailerSettingOptions = mailerSettingOptions.Value;
+    private readonly INotificationSender notificationSender = notificationSender;
     private readonly ArticleImages articleImageOptions = articleImageOptions.Value;
     private readonly ProfileImages profileImagesOptions = profileImages.Value;
     private readonly string prefixCacheVisitor = nameof(prefixCacheVisitor);
@@ -55,13 +53,11 @@ public class VisitorService(
         var code = await userManager.GenerateEmailConfirmationTokenAsync(appUser);
         code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
 
-        var origin = ConstantStrings.Origin;
-
         logger.LogInformation("Send confirmation code to newspaper({id})", appUser.Id);
-        BackgroundJob.Enqueue(() => 
-            EmailSendingHelp.SendEmailAsync($"{newspaperAddRequest.Name}", appUser, code, origin!, mailerSettingOptions)
-        );
-        await Task.CompletedTask;
+
+        (string EmailSubject, string EmailBody) = ConstantStrings.ConfirmationEmail($"{newspaperAddRequest.Name}", code, appUser.Id);
+        notificationSender.SendEmailAsync(appUser.Email!, EmailSubject,
+            EmailBody);
 
         var addedNewspaper = await appDbContext.NewsPapers.AddAsync(new NewsPaper
         {
@@ -102,13 +98,11 @@ public class VisitorService(
         var code = await userManager.GenerateEmailConfirmationTokenAsync(appUser);
         code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
 
-        var origin = ConstantStrings.Origin;
-
         logger.LogInformation("Send confirmation code to member({id})", appUser.Id);
-        BackgroundJob.Enqueue(() =>
-            EmailSendingHelp.SendEmailAsync($"{memberAddRequest.FirstName} {memberAddRequest.LastName}", appUser, code, origin!, mailerSettingOptions)
-        );
-        await Task.CompletedTask;
+
+        (string EmailSubject, string EmailBody) = ConstantStrings.ConfirmationEmail($"{memberAddRequest.FirstName} {memberAddRequest.LastName}", code, appUser.Id);
+        notificationSender.SendEmailAsync(appUser.Email!, EmailSubject,
+            EmailBody);
 
         var addedMember = await appDbContext.Members.AddAsync(new Member
         {

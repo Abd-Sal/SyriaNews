@@ -19,9 +19,9 @@ public static class DependenciesInjection
             .BindConfiguration(ProfileImages.sectionName)
             .ValidateDataAnnotations()
             .ValidateOnStart();
-        
-        services.AddOptions<MailSettings>()
-            .BindConfiguration(nameof(MailSettings))
+
+        services.AddOptions<EmailConfigurationsOptions>()
+            .Bind(configuration.GetSection(EmailConfigurationsOptions.SectionName))
             .ValidateDataAnnotations()
             .ValidateOnStart();
 
@@ -104,8 +104,6 @@ public static class DependenciesInjection
             option.SignIn.RequireConfirmedEmail = true;
         });
 
-        services.Configure<MailSettings>(configuration.GetSection(nameof(MailSettings)));
-
         return services;
     }
     private static IServiceCollection AddServicesConfig(this IServiceCollection services)
@@ -113,6 +111,7 @@ public static class DependenciesInjection
         services.AddScoped<IUnitOfWork, UnitOfWork.UnitOfWork>();
         services.AddScoped<IJwtProvider, JwtProvider>();
         services.AddScoped<IAuthService, AuthService>();
+        services.AddScoped<INotificationSender, NotificationSender>();
         return services;
     }
     private static IServiceCollection AddingCorsConfig(this IServiceCollection services, IConfiguration configuration)
@@ -160,7 +159,6 @@ public static class DependenciesInjection
             {
                 option.MinimumAvailableServers = 1;
             })
-            .AddCheck<MailProviderHealthCheck>("Mail Service")
             ;
         return services;
     }
